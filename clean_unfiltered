@@ -1,0 +1,39 @@
+#!/bin/bash
+
+nargs=1
+
+if [[ "$#" < "$nargs" ]]; then
+	echo "Please specify at least one session directory to process."
+	echo "Usage: ./clean_unfiltered <path_to_session_dir1> <path_to_session_dir2> ..."
+else
+	for i in $@; do
+		cd $i
+		echo "Processing directory "$i
+		echo "creating unfiltered subdir"
+		mkdir "Unfiltered_Raw"
+		destdir="Unfiltered_Raw/"
+
+		ndirs=$(ls -l . | grep -c ^d)
+		echo "Found "$ndirs" run directories"
+
+		declare -a NAMELIST
+
+		COUNT=0
+		for dir in ./*/; do
+			curdir=${dir%*/}
+			curdir=${curdir##*/}
+			NAMELIST[COUNT]=$curdir
+			let COUNT++;
+		done
+		
+		for dind in $(seq 2 $ndirs); do
+			lastind=`expr $dind - 1`
+			lastname=$(echo ${NAMELIST[$lastind]} | cut -d'_' -f 2-)
+			curname=$(echo ${NAMELIST[$dind]} | cut -d'_' -f 2-)
+			if [[ "$lastname" == "$curname" ]]; then
+				echo "Found name-matched pair: "${NAMELIST[$lastind]}" and "${NAMELIST[$dind]}
+				mv ${NAMELIST[$lastind]} $destdir
+			fi
+		done
+	done
+fi

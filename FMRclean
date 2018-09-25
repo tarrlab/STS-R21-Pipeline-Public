@@ -1,0 +1,22 @@
+#!/bin/bash
+
+nargs=1
+
+if [[ "$#" < "$nargs" ]]; then
+	echo "Error - too few arguments. Please specify directory to clean."
+	echo "Usage: ./FMRclean <full_path_to_base_session_dir>"
+else
+	cd $1
+	echo "Checking directory "$1
+	BVDIR=$(find . -type d -name "_BV-*")
+	if [ ! -d "$BVDIR" ]; then
+		echo "Error: BV dir not found."
+	else
+		cd $BVDIR
+		find . -type f -name "*_3DMCS.fmr" -exec rm -f {} \;
+		find . -type f -name "*_3DMCS.stc" -exec rm -f {} \;
+	fi
+fi
+
+
+
