@@ -66,7 +66,7 @@
    - VTC creation will requite a Bounding Box .bbx file. This will almost certainly have to be done manually. The same .bbx file will be used for all sessions.
    - Protocol files will also need to be attached to FMR files at some point. I think we have decided that all necessary protocol files will live in the _BV directory (instead of being referenced in some other directory). So this could either be automated or done manually.
    - Script to perform MTC creation:
-      - There is an existing script to do this as well as a Matlab helper script I think. I will add these to the repo soon.
+      - `MTCcreator.js` will batch-create MTCs given a directory of VMRs, VTCs, and SRFs from the same subjects. To use this, place in `.../BVExtensions/Plugins_64/` and run from BV script editor (`Scripts -> Edit and Run Scripts...`).
 
 
 **NOTE: After BBR and VTC creation, this check should be performed**
