@@ -1,5 +1,5 @@
 ## Data Processing Pipeline for STS Project
-***Latest Revision 9/25/18 by @pitchaim***
+***Latest Revision 9/27/18 by @pitchaim***
 
 ***
 
