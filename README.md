@@ -5,6 +5,7 @@
 
 ### Contents
 #### [Installation](#install)
+#### [Contents](#contents)
 #### [Pipeline organization](#org)
 #### [Function reference](#funcref)
 #### [Parameters](#params)
@@ -15,6 +16,12 @@
 2. Locate BrainVoyager's `BVExtensions` directory and note path.
 3. Run `sudo chmod u+x install.sh`
 4. Run install.sh as sudo: `sudo ./install.sh <path/to/BVExtensions>`
+
+### Contents<a name="contents"></a>
+- Plugins: `COPE_v10.js`, `COPE_v10.ui` - pipeline
+- Scripts: `MTCcreator.js` - MTC generation script
+- Shell: `clean_unfiltered`, `FMRclean` - helper scripts (discussed below)
+- Extra: `COPE_v10_SPIN-ECHO.js` (spin-echo version of pipeline - to use, rename as `COPE_v10.js` and place in `BVExtensions/Plugins_64`), `PRT2SDM.m` (Matlab script to convert PRT files into SDMs), `STS-R21-Volume-Reference.txt` (reference table for number of volumes per task, used by pipeline), `STSR21TaskVolumeLookup.mat` (reference table for number of volumes per task, used by PRT2SDM), `getPRTparams.m` (helper script used by PRT2SDM)
 
 ### Pipeline organization<a name="org"></a>
 **Main Steps & Functions**
