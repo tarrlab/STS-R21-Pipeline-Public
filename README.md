@@ -5,7 +5,7 @@
 
 ### Contents
 #### [Installation](#install)
-#### [Contents](#contents)
+#### [Package Contents](#contents)
 #### [Pipeline organization](#org)
 #### [Function reference](#funcref)
 #### [Parameters](#params)
@@ -17,7 +17,7 @@
 3. Run `sudo chmod u+x install.sh`
 4. Run install.sh as sudo: `sudo ./install.sh <path/to/BVExtensions>`
 
-### Contents<a name="contents"></a>
+### Package Contents<a name="contents"></a>
 - Plugins: `COPE_v10.js`, `COPE_v10.ui` - pipeline
 - Scripts: `MTCcreator.js` - MTC generation script
 - Shell: `clean_unfiltered`, `FMRclean` - helper scripts (discussed below)
