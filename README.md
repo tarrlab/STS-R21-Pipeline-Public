@@ -9,6 +9,11 @@
 #### [Parameters](#params)
 #### [Original pipeline description](#origdesc)
 
+### Installation
+1. Clone/download repository to desired location.
+2. Locate BrainVoyager's `BVExtensions` directory and note path.
+3. Run `sudo chmod u+x install.sh`
+4. Run install.sh as sudo: `sudo ./install.sh <path-to-BVExtensions`
 
 ### Pipeline organization<a name="org"></a>
 **Main Steps & Functions**
